@@ -1,0 +1,36 @@
+/* Header styling */
+header {
+    background-color: #34495e;
+    color: white;
+    padding: 10px 20px;
+}
+
+/* Navigation menu */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+}
+
+/* Main content padding */
+main {
+    padding: 20px;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #34495e;
+    color: white;
+    margin-top: 20px;
+}
