@@ -8,3 +8,7 @@ body{
 }
 header h1{ font-size:18px; margin:0 0 6px 0;}
 main p{ color:#c63737; }
+body {
+  background-color: lightblue;
+}
+
