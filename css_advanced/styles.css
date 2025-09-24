@@ -1,14 +1,103 @@
 /* styles.css - simple starter */
-body{
-  font-family: Arial, sans-serif;
-  background: #629224;
+/* ===== RESET / GLOBAL ===== */
+body {
   margin: 0;
-  padding: 18px;
+  font-family: Arial, sans-serif;
   color: #222;
 }
-header h1{ font-size:18px; margin:0 0 6px 0;}
-main p{ color:#c63737; }
-body {
-  background-color: lightblue;
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+header img {
+  height: 40px; /* adjust logo size */
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header ul li a:hover {
+  color: #c271ff;
+}
+
+/* ===== BANNER ===== */
+.banner {
+  height: 100vh;
+  background: url("Object.png") no-repeat center center/cover; /* replace with your background */
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner-text h1 {
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.banner-text span {
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.banner-text button {
+  margin-top: 20px;
+  background: #c271ff; /* purple */
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.banner-bottom h2 {
+  margin-top: 60px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.profiles {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.profile h3 {
+  margin: 10px 0 5px;
+}
+
+.profile p {
+  font-size: 14px;
+  color: #ccc;
 }
 
