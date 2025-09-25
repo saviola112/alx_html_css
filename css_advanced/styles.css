@@ -260,3 +260,38 @@ header ul li a:hover {
     font-weight: bold;
     cursor: pointer;
 }
+/* 6. FAQ Section */
+.faq-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.faq-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.faq-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* ensures columns stack on smaller screens */
+    text-align: left;
+}
+
+.faq-column {
+    flex: 1 1 45%; /* makes the columns flexible and they take up about half the width */
+    max-width: 500px;
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #444;
+}
