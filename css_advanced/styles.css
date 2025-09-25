@@ -149,3 +149,71 @@ header ul li a:hover {
         text-align: left;
     }
 }
+/* Video List Section */
+.video-list-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.video-card {
+    max-width: 250px;
+    text-align: center;
+}
+
+.video-thumbnail-container {
+    position: relative; /* This is the key. It makes the container a reference point for absolute positioning. */
+    display: inline-block;
+}
+
+.video-thumbnail-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px; !important;
+  height: 70px; !important;
+  cursor: pointer;
+  z-index: 2;
+  background-image: url('play.png');
+  backgroung-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Author and Rating Styles */
+.author-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.author-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    color: #c271ff; /* The purple color for the stars. */
+    margin-bottom: 5px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .video-list-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
