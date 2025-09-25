@@ -295,3 +295,44 @@ header ul li a:hover {
     line-height: 1.5;
     color: #444;
 }
+/* 7. Footer */
+.main-footer {
+    background-color: #071629;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding-bottom: 20px;
+}
+
+.footer-logo {
+    height: 40px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #c271ff;
+}
+
+.copyright p {
+    font-size: 14px;
+    color: #888;
+}
