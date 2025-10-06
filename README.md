@@ -1,3 +1,6 @@
+# CSS Advanced
+
+This is the CSS Advanced project inside the `alx_html_css` repository.
 # Headphone Company Webpage Project
 
 This project implements a fully responsive webpage for a headphone company.
