@@ -86,7 +86,7 @@ body {
     border-radius: 10px;
 }
 
-/* Hero Content (Applies to both desktop and mobile) */
+/* Hero Content */
 .hero-content {
     text-align: center;
     padding: 100px 0 50px; 
@@ -129,7 +129,7 @@ body {
 }
 
 /* ====================================
-   2. WHAT WE DO STYLING
+   2. WHAT WE DO STYLING (New Section)
    ==================================== */
 
 .section-what-we-do {
@@ -152,6 +152,7 @@ body {
 /* The Grid Layout */
 .services-grid {
     display: grid;
+    /* On desktop, create 4 equal columns */
     grid-template-columns: repeat(4, 1fr); 
     gap: 30px;
     padding: 0 20px;
@@ -161,10 +162,12 @@ body {
     text-align: center;
 }
 
+/* Styling for the custom font icons */
 .service-icon {
-    width: 60px; 
-    height: auto;
+    font-size: 40px; /* Make the icon a decent size */
+    color: #FF6565; /* Give the icon the primary color */
     margin-bottom: 15px;
+    display: block; /* Ensures the icon is centered */
 }
 
 .service-block h3 {
@@ -187,7 +190,7 @@ body {
     
     /* 1. Show/Hide Menu Elements */
     .nav-links {
-        display: none; /* Hides desktop links by default */
+        display: none; 
         flex-direction: column;
         width: 100%; 
         
@@ -197,24 +200,25 @@ body {
         top: 0;          
         left: 0;         
 
-        background-color: #333; /* Dark background for the dropdown */
-        padding-top: 80px; /* Space below the logo area */
+        background-color: #333; 
+        padding-top: 80px; 
         z-index: 10;
         
-        /* Spacing and Alignment Fix: This makes the links look like the video */
+        /* Spacing and Alignment Fix */
         align-items: center; 
-        justify-content: flex-start; /* Start links from the top */
-        gap: 25px; /* Adds clear vertical space between links */
+        justify-content: flex-start;
+        gap: 25px;
     }
     
+    /* Fix for Link Size/Clickability on Mobile */
     .nav-links li a {
-        font-size: 1.5rem; /* Make the text large for tapping */
+        font-size: 1.5rem; 
         padding: 10px 0;
-        display: block; /* Makes the entire area clickable */
+        display: block;
     }
 
     .nav-toggle {
-        display: flex; /* Show the hamburger icon */
+        display: flex;
         order: 3;
     }
 
@@ -224,11 +228,12 @@ body {
 
     /* 2. Menu Dropdown State (JS interaction) */
     body.menu-open .nav-links {
-        display: flex; /* Makes the dropdown visible */
+        display: flex;
     }
 
     /* 3. Content Stacking */
     .services-grid {
+        /* On mobile, stack services into a single column */
         grid-template-columns: 1fr; 
         gap: 40px;
     }
