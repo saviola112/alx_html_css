@@ -242,3 +242,61 @@ body {
         font-size: 2rem;
     }
 }
+/* ====================================
+   3. OUR RESULTS STYLING
+   ==================================== */
+
+.section-our-results {
+    /* Use a dark background and white text for contrast */
+    background-color: #071629; 
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-our-results .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white; /* Ensure title is white */
+}
+
+.section-our-results .section-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+/* The Grid Layout - Uses the same setup as services-grid! */
+.results-grid {
+    display: grid;
+    /* Create 4 equal columns on desktop */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.result-block {
+    text-align: center;
+}
+
+.result-value {
+    font-size: 4rem; /* Make the numbers large and impactful */
+    color: #FF6565; /* Use the project's primary color */
+    font-weight: bold;
+    margin: 0;
+}
+
+.result-text {
+    font-size: 0.9rem;
+    margin: 5px 0 0;
+    opacity: 0.8;
+}
+
+/* Mobile Responsiveness for Results Grid */
+@media (max-width: 480px) {
+    .results-grid {
+        /* On mobile, stack them into a single column */
+        grid-template-columns: 1fr; 
+        gap: 40px;
+    }
+}
