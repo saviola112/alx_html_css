@@ -1,0 +1,238 @@
+/* ====================================
+   GLOBAL STYLING & MANDATORY REQUIREMENTS
+   ==================================== */
+* {
+    box-sizing: border-box; /* Ensures padding and border don't increase element size */
+}
+
+body {
+    margin: 0;
+    /* Use your project's official fonts */
+    font-family: 'Source Sans Pro', Arial, sans-serif; 
+}
+
+/* MANDATORY: Max width and centering */
+.container {
+    max-width: 1000px; /* MANDATORY: Max width requirement */
+    margin: 0 auto;    /* MANDATORY: Centers the container */
+    padding: 0 20px;   /* Prevents content from touching screen edges */
+}
+
+/* MANDATORY: Links and Button Hover/Active State */
+.nav-links a:hover,
+.nav-links a:active,
+.button:hover,
+.button:active {
+    color: #FF6565; /* The required pink/red color for links */
+    opacity: 0.9;  /* Opacity change for buttons/links on hover */
+}
+
+/* ====================================
+   1. HEADER STYLING 
+   ==================================== */
+
+.header {
+    /* *** CRITICAL: Image path for header background *** */
+    /* Assuming styles.css is in the SAME FOLDER as the 'images' folder: */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/headphones_hero_1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-color: #000; /* Fallback */
+    color: white;
+    min-height: 500px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    height: 30px; 
+}
+
+/* Desktop Navigation */
+.nav-links {
+    list-style: none;
+    display: flex; 
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* Mobile Toggle Icon - Hidden by default on desktop */
+.nav-toggle {
+    display: none; 
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Hero Content (Applies to both desktop and mobile) */
+.hero-content {
+    text-align: center;
+    padding: 100px 0 50px; 
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3rem; 
+    margin-bottom: 5px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Style the primary action button */
+.button {
+    background-color: #FF6565;
+    color: white;
+    padding: 15px 30px; 
+    border: none;
+    border-radius: 25px; 
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+/* Extra text at the bottom of the hero area */
+.hero-bottom-text {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto; 
+    padding-bottom: 50px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ====================================
+   2. WHAT WE DO STYLING
+   ==================================== */
+
+.section-what-we-do {
+    padding: 80px 0;
+    text-align: center;
+    color: #071629; /* Dark text color */
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+/* The Grid Layout */
+.services-grid {
+    display: grid;
+    /* On desktop, create 4 equal columns */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.service-block {
+    text-align: center;
+}
+
+.service-icon {
+    /* Adjust size for the icons */
+    width: 60px; 
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.service-block h3 {
+    font-size: 1.1rem;
+    margin-top: 0;
+}
+
+.service-block p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+
+/* ====================================
+   3. MOBILE RESPONSIVENESS (MANDATORY)
+   ==================================== */
+
+/* MANDATORY: Switch to mobile view at 480px or less */
+@media (max-width: 480px) {
+    
+    /* 1. Show/Hide Menu Elements */
+    .nav-links {
+        display: none; /* Hides desktop links by default */
+        flex-direction: column;
+        width: 100%; 
+        
+        /* *** FIX FOR FULL-SCREEN DROPDOWN *** */
+        position: fixed; /* Use FIXED to cover the entire viewport */
+        height: 100vh;   /* Make it fill the entire screen height */
+        top: 0;          /* Start from the very top */
+        left: 0;         /* Start from the very left */
+        /* *********************************** */
+
+        background-color: #333; /* Dark background for the dropdown */
+        padding-top: 80px; /* Push links down below the logo area */
+        z-index: 10;
+        
+        /* Ensure mobile links are centered and fill space */
+        align-items: center; 
+    }
+
+    .nav-toggle {
+        display: flex; /* Show the hamburger icon */
+        order: 3; /* Push to the far right */
+    }
+
+    .logo {
+        order: 1; /* Keep logo on the far left */
+    }
+
+    /* 2. Menu Dropdown State (JS interaction) */
+    /* This is the ON switch for the menu when the button is clicked */
+    body.menu-open .nav-links {
+        display: flex; /* Makes the dropdown visible */
+    }
+
+    /* 3. Content Stacking */
+    .services-grid {
+        /* On mobile, stack services into a single column */
+        grid-template-columns: 1fr; 
+        gap: 40px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}

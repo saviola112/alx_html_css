@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headphone Company</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <div class="container"> 
+        
+        <header class="header">
+            <nav class="navbar">
+                <a href="#" id="menu-toggle" class="nav-toggle" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+                
+                <img src="images/logo_headphones.png" alt="HEADPHONES logo" class="logo">
+                
+                <ul class="nav-links">
+                    <li><a href="#">what we do</a></li>
+                    <li><a href="#">our results</a></li>
+                    <li><a href="#">contact us</a></li>
+                </ul>
+            </nav>
+
+            <section class="hero-content">
+                <h1>Lorem ipsum dolor set amet lorem ipsum</h1>
+                <p>Lorem ipsum dolor set amet lorem ipsum dolor set</p>
+                <button class="button">CALL TO ACTION</button>
+            </section>
+
+            <div class="hero-bottom-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        </header>
+        
+        <section class="section-what-we-do">
+            <div class="container">
+                <h2 class="section-title">What we do...</h2>
+                <p class="section-subtitle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                </p>
+
+                <div class="services-grid">
+                    <div class="service-block">
+                        <img src="images/sound.png" alt="Icon 1" class="service-icon">
+                        <h3>Lorem Ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                    
+                    <div class="service-block">
+                        <img src="images/music.png" alt="Icon 2" class="service-icon">
+                        <h3>Lorem Ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                    
+                    <div class="service-block">
+                        <img src="images/video.png" alt="Icon 3" class="service-icon">
+                        <h3>Lorem Ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                    
+                    <div class="service-block">
+                        <img src="images/person.png" alt="Icon 4" class="service-icon">
+                        <h3>Lorem Ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div> 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Get the button (the hamburger icon)
+            const menuToggle = document.getElementById('menu-toggle');
+
+            // 2. Add a click listener
+            menuToggle.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                
+                // 3. Toggle the 'menu-open' class on the body to activate the CSS dropdown
+                document.body.classList.toggle('menu-open');
+            });
+        });
+    </script>
+</body>
+</html>
