@@ -357,3 +357,65 @@ body {
     width: 100%; 
     margin-top: 10px;
 }
+
+/* ====================================
+   5. FOOTER STYLING
+   ==================================== */
+
+.main-footer {
+    background-color: #071629; /* Dark background color */
+    color: white;
+    padding: 30px 0; /* Vertical padding */
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Pushes content to the opposite ends */
+    align-items: center;
+}
+
+.footer-logo-group {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between logo and copyright text */
+}
+
+.footer-logo {
+    height: 30px; 
+}
+
+.copyright-text {
+    font-size: 0.8rem;
+    opacity: 0.6; /* Makes the copyright text dimmer */
+}
+
+/* Social Icons Styling */
+.social-media-icons a {
+    color: white;
+    font-size: 20px; /* Adjust icon size */
+    margin-left: 20px; /* Space between icons */
+    text-decoration: none;
+    /* Reuse mandatory hover/active styles from global rules */
+}
+
+/* Mobile Responsiveness for Footer */
+@media (max-width: 480px) {
+    .footer-content {
+        /* On mobile, stack content vertically and center everything */
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .footer-logo-group {
+        /* Center the logo and copyright text */
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .social-media-icons {
+        margin-top: 10px;
+    }
+}
