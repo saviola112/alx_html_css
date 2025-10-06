@@ -2,20 +2,19 @@
    GLOBAL STYLING & MANDATORY REQUIREMENTS
    ==================================== */
 * {
-    box-sizing: border-box; /* Ensures padding and border don't increase element size */
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    /* Use your project's official fonts */
-    font-family: 'Source Sans Pro', Arial, sans-serif; 
+    font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 
 /* MANDATORY: Max width and centering */
 .container {
-    max-width: 1000px; /* MANDATORY: Max width requirement */
-    margin: 0 auto;    /* MANDATORY: Centers the container */
-    padding: 0 20px;   /* Prevents content from touching screen edges */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* MANDATORY: Links and Button Hover/Active State */
@@ -23,23 +22,22 @@ body {
 .nav-links a:active,
 .button:hover,
 .button:active {
-    color: #FF6565; /* The required pink/red color for links */
-    opacity: 0.9;  /* Opacity change for buttons/links on hover */
+    color: #FF6565;
+    opacity: 0.9;
 }
 
 /* ====================================
-   1. HEADER STYLING 
+   1. HEADER STYLING
    ==================================== */
 
 .header {
-    /* *** CRITICAL: Image path for header background *** */
-    /* Assuming styles.css is in the SAME FOLDER as the 'images' folder: */
+    /* CRITICAL: Image path for header background */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/headphones_hero_1.jpg'); 
     background-size: cover;
     background-position: center;
-    background-color: #000; /* Fallback */
+    background-color: #000;
     color: white;
-    min-height: 500px; 
+    min-height: 500px;
     display: flex;
     flex-direction: column;
 }
@@ -137,7 +135,7 @@ body {
 .section-what-we-do {
     padding: 80px 0;
     text-align: center;
-    color: #071629; /* Dark text color */
+    color: #071629;
 }
 
 .section-title {
@@ -154,7 +152,6 @@ body {
 /* The Grid Layout */
 .services-grid {
     display: grid;
-    /* On desktop, create 4 equal columns */
     grid-template-columns: repeat(4, 1fr); 
     gap: 30px;
     padding: 0 20px;
@@ -165,7 +162,6 @@ body {
 }
 
 .service-icon {
-    /* Adjust size for the icons */
     width: 60px; 
     height: auto;
     margin-bottom: 15px;
@@ -195,39 +191,44 @@ body {
         flex-direction: column;
         width: 100%; 
         
-        /* *** FIX FOR FULL-SCREEN DROPDOWN *** */
-        position: fixed; /* Use FIXED to cover the entire viewport */
-        height: 100vh;   /* Make it fill the entire screen height */
-        top: 0;          /* Start from the very top */
-        left: 0;         /* Start from the very left */
-        /* *********************************** */
+        /* FIX FOR FULL-SCREEN DROPDOWN */
+        position: fixed; 
+        height: 100vh;   
+        top: 0;          
+        left: 0;         
 
         background-color: #333; /* Dark background for the dropdown */
-        padding-top: 80px; /* Push links down below the logo area */
+        padding-top: 80px; /* Space below the logo area */
         z-index: 10;
         
-        /* Ensure mobile links are centered and fill space */
+        /* Spacing and Alignment Fix: This makes the links look like the video */
         align-items: center; 
+        justify-content: flex-start; /* Start links from the top */
+        gap: 25px; /* Adds clear vertical space between links */
+    }
+    
+    .nav-links li a {
+        font-size: 1.5rem; /* Make the text large for tapping */
+        padding: 10px 0;
+        display: block; /* Makes the entire area clickable */
     }
 
     .nav-toggle {
         display: flex; /* Show the hamburger icon */
-        order: 3; /* Push to the far right */
+        order: 3;
     }
 
     .logo {
-        order: 1; /* Keep logo on the far left */
+        order: 1;
     }
 
     /* 2. Menu Dropdown State (JS interaction) */
-    /* This is the ON switch for the menu when the button is clicked */
     body.menu-open .nav-links {
         display: flex; /* Makes the dropdown visible */
     }
 
     /* 3. Content Stacking */
     .services-grid {
-        /* On mobile, stack services into a single column */
         grid-template-columns: 1fr; 
         gap: 40px;
     }
