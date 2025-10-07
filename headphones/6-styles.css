@@ -243,45 +243,89 @@ body {
     }
 }
 /* ====================================
-   3. OUR RESULTS STYLING
+   3. OUR RESULTS STYLING (UPDATED FOR PENTAGON)
    ==================================== */
 
 .section-our-results {
-    /* Use a dark background and white text for contrast */
     background-color: #071629; 
     color: white;
     padding: 80px 0;
     text-align: center;
 }
 
-.section-our-results .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: white; /* Ensure title is white */
-}
+/* ... existing titles/subtitles CSS here ... */
 
-.section-our-results .section-subtitle {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 50px;
-}
-
-/* The Grid Layout - Uses the same setup as services-grid! */
+/* The Grid Layout - Keep the standard grid */
 .results-grid {
     display: grid;
-    /* Create 4 equal columns on desktop */
     grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     padding: 0 20px;
+    position: relative; /* IMPORTANT: Helps position the results text */
 }
 
+/* The parent block for positioning */
 .result-block {
     text-align: center;
+    position: relative; /* Allows text and pentagon to be positioned inside */
+    height: 120px; /* Set a fixed height to see the pentagon */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 1. STYLES TO DRAW THE PENTAGON SHAPE */
+.pentagon-shape {
+    /* Set size of the main box, which dictates the size of the shape */
+    width: 95px; 
+    height: 95px; 
+    background: transparent;
+    position: absolute;
+    overflow: hidden;
+}
+
+/* 2. Using the ::before and ::after pseudo-elements to draw triangles */
+.pentagon-shape::before {
+    content: '';
+    position: absolute;
+    /* Create the bottom trapezoid/rectangle */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FF6565; /* Primary color */
+    
+    /* Skew the sides to form the middle part of the pentagon */
+    transform: rotate(35deg) skewX(-20deg);
+}
+
+.pentagon-shape::after {
+    content: '';
+    position: absolute;
+    /* Create the top triangle point */
+    top: -5px; 
+    left: 10px;
+    
+    /* Using CSS borders to draw a triangle (100% width - 20px offset) */
+    width: 0;
+    height: 0;
+    border-left: 37.5px solid transparent; /* Half of the top side */
+    border-right: 37.5px solid transparent;
+    border-bottom: 25px solid #FF6565; /* The top point color */
+}
+
+/* 3. POSITION THE TEXT OVER THE PENTAGON */
+.result-value,
+.result-text {
+    position: relative; /* Brings text forward above the shape */
+    z-index: 2; /* Ensures text is on top */
+    color: white; /* Ensure text is visible */
 }
 
 .result-value {
-    font-size: 4rem; /* Make the numbers large and impactful */
-    color: #FF6565; /* Use the project's primary color */
+    font-size: 2rem; 
+    color: #fff; 
     font-weight: bold;
     margin: 0;
 }
@@ -292,12 +336,14 @@ body {
     opacity: 0.8;
 }
 
-/* Mobile Responsiveness for Results Grid */
+/* Mobile Responsiveness - Ensure pentagons stack vertically */
 @media (max-width: 480px) {
     .results-grid {
-        /* On mobile, stack them into a single column */
         grid-template-columns: 1fr; 
         gap: 40px;
+    }
+    .result-block {
+        height: 150px; /* Increase height for mobile stacking */
     }
 }
 /* ====================================
