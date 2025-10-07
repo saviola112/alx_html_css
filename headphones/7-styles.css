@@ -160,6 +160,25 @@ body {
 
 .service-block {
     text-align: center;
+    transition: transform 0.3s ease-in-out, opacity o.3s ease-in-out;
+}
+
+/* New Rule: Animation on Hover */
+.service-block:hover {
+    /* Scale up slightly on hover */
+    transform: scale(1.1); 
+    /* Make it slightly more opaque */
+    opacity: 1;
+    /* Lift it visually */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+.service-icon {
+    /* Add transition to the icon as well, if needed */
+    transition: color 0.3s ease-in-out; 
+}
+.service-block:hover .service-icon {
+    /* Change icon color slightly on hover */
+    color: #FF6565; 
 }
 
 /* Styling for the custom font icons */
@@ -283,6 +302,8 @@ body {
     background: transparent;
     position: absolute;
     overflow: hidden;
+    animation: breathing-scale 4s infinite ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 /* 2. Using the ::before and ::after pseudo-elements to draw triangles */
@@ -464,4 +485,10 @@ body {
     .social-media-icons {
         margin-top: 0 10px;
     }
+}
+/* Breathing Scale Animation */
+@keyframes breathing-scale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); } /* Scales up 5% */
+    100% { transform: scale(1); }
 }
